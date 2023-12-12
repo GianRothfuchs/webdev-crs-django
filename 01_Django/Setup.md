@@ -118,6 +118,15 @@ myDjangoEnv
 
 ## The wiring
 
+###Example 0: The basic wiring
+
+1. Got to the `views.py` in the app folder. Create the view named `home` using returning an `HttpResponse`.
+2. Create an `urls.py` file at the the app level. Import `path` from `django.urls` and `views` form `.` (`.` references the current dir where `views.py`is located).
+3. Go to `urls.py` at the project level. Import `include` from `django.urls`. Then add new path to `urlpatterns` by adding something like `path('',include('myapp.urls'))` to set a reference to the `urls.py` created above.
+4. Got the the `settings.py` file at the project level and register the app by adding `myapp` to the `INSTALLED_APPS` list.
+5. Check the setup by running `python manage.py runserver`.
+
+
 ###Example 1: working with user supplied ids. 
 
 User supplied ids: I.e. the user inputs `htpp://127.0.0.1/menue/1`. This means the id provided is a "1".
